@@ -81,11 +81,7 @@ func fetch(panels *metro_tenerife.Panels, trams *metro_tenerife.Trams, stops map
 }
 
 func main() {
-	err := godotenv.Load(".env")
-	if err != nil {
-		log.Fatal("Error loading .env file")
-	}
-
+	godotenv.Load(".env")
 	token := os.Getenv("TELEGRAM_TOKEN")
 
 	bot, err := tgbotapi.NewBotAPI(token)
